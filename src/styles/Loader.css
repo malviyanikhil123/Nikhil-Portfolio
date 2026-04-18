@@ -1,0 +1,128 @@
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(16, 15, 19, 0.9);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Base glowing effect behind the loader */
+.loader-container::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(255, 97, 84, 0.4), rgba(155, 93, 229, 0.4), transparent);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: corePulse 2s ease-in-out infinite alternate;
+}
+
+.outer-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #ff6154;
+    /* Coral */
+    border-right-color: #ff6154;
+    box-shadow: 0 0 20px rgba(255, 97, 84, 0.4);
+    animation: spinClockwise 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+/* Add a planetary "comet" dot */
+.outer-circle::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff6154;
+    box-shadow: 0 0 15px 4px #ff6154;
+}
+
+.inner-circle {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-bottom-color: #9b5de5;
+    /* Violet */
+    border-left-color: #9b5de5;
+    box-shadow: 0 0 20px rgba(155, 93, 229, 0.4);
+    animation: spinCounter 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+/* Add an inner orbit dot */
+.inner-circle::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #9b5de5;
+    box-shadow: 0 0 15px 4px #9b5de5;
+}
+
+@keyframes spinClockwise {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.05);
+        /* Slight breathing element */
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes spinCounter {
+    0% {
+        transform: rotate(360deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(0.9);
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+@keyframes corePulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0.9;
+    }
+}

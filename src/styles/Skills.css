@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+/* ===== TOOLS SECTION ===== */
+.tools-wrap {
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Section top label */
+.tools-tag {
+  display: block;
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ff8a7a;
+  margin-bottom: 14px;
+}
+
+.tools-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #f4f0ff;
+  text-align: center;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.tools-heading em {
+  font-style: normal;
+  color: #ff8a7a;
+}
+
+.tools-sub {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #59546a;
+  margin-bottom: 64px;
+}
+
+/* Fade mask on marquee edges */
+.marquee-outer {
+  position: relative;
+}
+.marquee-outer::before,
+.marquee-outer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 140px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee-outer::before {
+  left: 0;
+  background: linear-gradient(90deg, #100f13 0%, transparent 100%);
+}
+.marquee-outer::after {
+  right: 0;
+  background: linear-gradient(-90deg, #100f13 0%, transparent 100%);
+}
+
+/* Marquee track */
+.marquee-row {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+  animation: scroll 62s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track.reverse { animation: scrollRev 62s linear infinite; }
+
+.marquee-row:hover .marquee-track { animation-play-state: paused; }
+
+@keyframes scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+@keyframes scrollRev { 0%{transform:translateX(-50%)} 100%{transform:translateX(0)} }
+
+/* Individual tool pill */
+.tool-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  cursor: default;
+  transition: all .3s ease;
+}
+
+.tool-pill:hover {
+  background: rgba(255,97,84,0.07);
+  border-color: rgba(255,97,84,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,97,84,.1);
+}
+
+.tool-pill img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform .3s ease;
+}
+
+.tool-pill:hover img { transform: scale(1.15); }
+
+.tool-pill span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #a09cb2;
+  transition: color .3s;
+}
+
+.tool-pill:hover span { color: #f4f0ff; }
+
+@media (max-width: 768px) {
+  .tools-wrap { padding: 72px 0; }
+  .tools-heading { font-size: 1.8rem; }
+}

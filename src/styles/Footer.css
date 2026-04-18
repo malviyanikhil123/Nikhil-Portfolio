@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap');
+
+/* ===== FOOTER ===== */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ── Bottom Bar ── */
+.footer-bottom {
+  background: #0d0c10;
+  border-top: 1px solid rgba(255, 255, 255, 0.055);
+  padding: 32px 40px;
+}
+
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Logo / name */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-brand-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #f4f0ff;
+  letter-spacing: -0.02em;
+}
+
+.footer-brand-name span {
+  background: linear-gradient(135deg, #ff6154, #9b5de5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-brand-tagline {
+  font-size: 0.75rem;
+  color: #44404f;
+}
+
+/* Center links */
+.footer-links {
+  display: flex;
+  gap: 4px;
+}
+
+.footer-link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #59546a;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all .2s ease;
+}
+
+.footer-link:hover {
+  color: #f4f0ff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Right: social + copyright */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-self: end;
+  gap: 10px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 8px;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #59546a;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all .25s ease;
+}
+
+.social-btn:hover {
+  color: #ff8a7a;
+  background: rgba(255, 97, 84, .08);
+  border-color: rgba(255, 97, 84, .22);
+  transform: translateY(-2px);
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  color: #44404f;
+}
+
+/* Project page footer nav */
+.proj-footer-links .footer-link {
+  color: #59546a;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .footer-bottom {
+    padding: 28px 20px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+    gap: 20px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+}

@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap');
+
+.contact-section {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.contact-cta {
+  background: linear-gradient(135deg, rgba(255, 97, 84, 0.08) 0%, rgba(155, 93, 229, 0.07) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.contact-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ff8a7a;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.contact-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #f4f0ff;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.contact-sub {
+  font-size: 0.95rem;
+  color: #59546a;
+  margin-bottom: 36px;
+}
+
+.contact-form {
+  width: min(640px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #f4f0ff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.contact-input::placeholder {
+  color: #7d778f;
+}
+
+.contact-input:focus {
+  border-color: rgba(255, 97, 84, 0.55);
+  box-shadow: 0 0 0 3px rgba(255, 97, 84, 0.15);
+}
+
+.contact-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-email-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #ff6154;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 14px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease;
+  box-shadow: 0 8px 24px rgba(255, 97, 84, .3);
+}
+
+.contact-email-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.form-status {
+  margin-top: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.86rem;
+}
+
+.form-status.success {
+  color: #9cf7c5;
+}
+
+.form-status.error {
+  color: #ff9f97;
+}
+
+.contact-email-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(255, 97, 84, .45);
+  background: #ff4f41;
+}
+
+@media (max-width: 768px) {
+  .contact-cta {
+    padding: 60px 24px;
+  }
+}

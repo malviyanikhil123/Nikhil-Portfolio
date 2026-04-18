@@ -1,0 +1,481 @@
+/* =============================================
+   PROJECT DETAILS - EDITORIAL 2-COLUMN PATTERN
+   ============================================= */
+
+.pd-main {
+  background-color: #030303;
+  /* Extremely dark black base */
+  color: #f5f5f5;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  /* Font inherits from index.css as requested */
+}
+
+/* ---- Ambient Glowing Orbs ---- */
+.pd-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(150px);
+  z-index: 0;
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
+.pd-orb-1 {
+  width: 600px;
+  height: 600px;
+  top: -10%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(157, 78, 221, 0.4) 0%, transparent 70%);
+  animation: pd-float 20s ease-in-out infinite alternate;
+}
+
+.pd-orb-2 {
+  width: 500px;
+  height: 500px;
+  top: 40%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.3) 0%, transparent 70%);
+  animation: pd-float 25s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes pd-float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+}
+
+/* Ensure containers are above the orbs */
+.pd-hero,
+.pd-showcase-hero,
+.pd-content {
+  position: relative;
+  z-index: 1;
+}
+
+.pd-not-found {
+  text-align: center;
+  padding: 10vh 20px;
+  color: #fff;
+}
+
+/* CONTAINERS */
+.pd-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+
+.pd-container-large {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 4vw;
+}
+
+/* =============================================
+   1. HERO SECTION
+   ============================================= */
+.pd-hero {
+  padding: 180px 0 80px;
+  text-align: center;
+  position: relative;
+  background: radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+}
+
+.pd-hero-center {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pd-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #a3a3a3;
+  margin-bottom: 30px;
+}
+
+.pd-title {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: #ffffff;
+  margin-bottom: 24px;
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+.pd-subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: #a3a3a3;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* Meta Bar under Title */
+.pd-meta-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pd-meta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.pd-meta-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #666;
+}
+
+.pd-meta-value {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #e5e5e5;
+}
+
+.pd-meta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #c8b7ff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.pd-github-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.pd-meta-link:hover {
+  color: #f0e9ff;
+  border-color: #f0e9ff;
+}
+
+/* =============================================
+   2. HERO SHOWCASE IMAGE
+   ============================================= */
+.pd-showcase-hero {
+  padding: 40px 0 100px;
+}
+
+.pd-main-image-wrap {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6),
+    0 0 80px rgba(157, 78, 221, 0.15);
+  /* border: 0px solid rgba(255, 255, 255, 0.1); */
+  background: #111;
+  position: relative;
+  transition: all 0.4s ease;
+  line-height: 0;
+}
+
+.pd-main-image-wrap:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 50px 120px rgba(0, 0, 0, 0.7),
+    0 0 100px rgba(157, 78, 221, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pd-main-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  box-shadow: inset 0 0 30px rgba(255, 107, 107, 0.1);
+  pointer-events: none;
+}
+
+.pd-main-img {
+  width: 100%;
+  display: block;
+  height: auto;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.pd-desktop-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* =============================================
+   3. CONTENT GRID (2 Column Rows)
+   ============================================= */
+.pd-content {
+  padding-bottom: 150px;
+}
+
+.pd-row {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 60px;
+  padding: 80px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pd-row.no-border {
+  border-top: none;
+}
+
+/* Left Label Column */
+.pd-col-label h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  position: sticky;
+  top: 100px;
+  /* Slight sticky effect for headers */
+}
+
+/* Right Content Column */
+.pd-col-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pd-text-large {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #e5e5e5;
+  font-weight: 400;
+}
+
+.pd-text-regular {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #a3a3a3;
+  font-weight: 300;
+}
+
+/* Features Grid inside Row */
+.pd-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.pd-feature-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pd-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pd-feature-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(157, 78, 221, 0.4);
+  box-shadow: 0 10px 30px rgba(157, 78, 221, 0.15);
+  transform: translateY(-3px);
+}
+
+.pd-feature-card:hover::before {
+  opacity: 1;
+}
+
+.pd-feature-dot {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.pd-feature-text {
+  font-size: 1.1rem;
+  color: #e5e5e5;
+}
+
+/* Design System Flex inside Row */
+.pd-ds-flex {
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.pd-ds-sublabel {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.pd-typo-display {
+  font-size: 6rem;
+  line-height: 1;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+}
+
+.pd-typo-font {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.pd-color-bubbles {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pd-bubble {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.pd-bubble-hex {
+  opacity: 0;
+  font-size: 0.75rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.pd-bubble:hover .pd-bubble-hex {
+  opacity: 1;
+}
+
+/* Mobile Screens Row */
+.pd-mobile-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.pd-mobile-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(255, 107, 107, 0.1);
+  transition: all 0.4s ease;
+}
+
+.pd-mobile-wrap:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(157, 78, 221, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pd-mobile-wrap img {
+  width: 100%;
+  display: block;
+}
+
+/* =============================================
+   RESPONSIVE DESIGN (BREAKPOINTS)
+   ============================================= */
+@media (max-width: 1024px) {
+  .pd-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 60px 0;
+  }
+
+  .pd-col-label h3 {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  .pd-meta-bar {
+    gap: 30px;
+  }
+
+  .pd-ds-flex {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pd-hero {
+    padding: 140px 0 60px;
+  }
+
+  .pd-title {
+    font-size: 3rem;
+  }
+
+  .pd-meta-bar {
+    flex-direction: column;
+    gap: 24px;
+    border-top: none;
+    margin-top: 40px;
+    padding-top: 0;
+  }
+
+  .pd-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pd-mobile-gallery {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
