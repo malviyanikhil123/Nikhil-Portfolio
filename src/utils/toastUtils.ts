@@ -8,6 +8,7 @@ const baseOptions: ToastOptions = {
 const toastIds = {
   welcome: "site-welcome",
   sending: "email-sending",
+  resumeDownload: "resume-download",
 } as const;
 
 export const showSiteToast = {
@@ -51,6 +52,33 @@ export const showEmailToast = {
       ...baseOptions,
       id: toastIds.sending,
       duration: 4000,
+    });
+  },
+};
+
+export const showResumeToast = {
+  downloadStarted: () => {
+    toast.loading("Preparing resume download...", {
+      ...baseOptions,
+      id: toastIds.resumeDownload,
+      duration: Infinity,
+    });
+  },
+
+  downloadSuccess: () => {
+    toast.success("Resume download completed successfully.", {
+      ...baseOptions,
+      id: toastIds.resumeDownload,
+      icon: "📄",
+      duration: 2800,
+    });
+  },
+
+  downloadError: () => {
+    toast.error("Couldn't download resume. Please try again.", {
+      ...baseOptions,
+      id: toastIds.resumeDownload,
+      duration: 3500,
     });
   },
 };
