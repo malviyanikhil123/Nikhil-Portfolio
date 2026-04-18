@@ -3,7 +3,7 @@ import { Download, ArrowRight } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 import Profile from "../assets/Profile.png";
 import "../styles/About.css";
-import myResume from "../assets/Resume/Resume.pdf";
+import myResume from "../assets/Resume/nikhil-malviya-full-stack-developer-resume.pdf";
 
 export default function About() {
   const [today, setToday] = useState(new Date());
@@ -124,7 +124,7 @@ export default function About() {
             <motion.div variants={itemVariants} className="hero-actions">
               <a
                 href={myResume}
-                download="Nikhil_Malviya_Resume.pdf"
+                download="nikhil-malviya-full-stack-developer-resume.pdf"
                 className="btn-primary"
               >
                 Download Resume <Download size={16} strokeWidth={2.5} />
