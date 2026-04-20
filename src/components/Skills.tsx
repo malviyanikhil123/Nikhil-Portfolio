@@ -40,7 +40,7 @@ export const Skills = () => (
       viewport={{ once: true, amount: 0.2 }}
       variants={{
         hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+        visible: { opacity: 1, transition: { staggerChildren: 0.22 } },
       }}
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
@@ -50,7 +50,7 @@ export const Skills = () => (
           visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.7, ease: "easeOut" },
+            transition: { duration: 1.05, ease: "easeOut" },
           },
         }}
         className="tools-tag"
@@ -63,7 +63,7 @@ export const Skills = () => (
           visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.7, ease: "easeOut" },
+            transition: { duration: 1.05, ease: "easeOut" },
           },
         }}
         className="tools-heading"
@@ -76,7 +76,7 @@ export const Skills = () => (
           visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.7, ease: "easeOut" },
+            transition: { duration: 1.05, ease: "easeOut" },
           },
         }}
         className="tools-sub"
@@ -89,7 +89,7 @@ export const Skills = () => (
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+      transition={{ duration: 1.1, ease: "easeOut", delay: 0.35 }}
       className="marquee-outer"
     >
       <div className="marquee-row">

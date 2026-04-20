@@ -84,7 +84,7 @@
 }
 
 .logo:hover .logo-gradient-overlay {
-    filter: saturate(1.25) brightness(1.15) contrast(1.08) drop-shadow(0 0 8px rgba(255, 97, 84, .55));
+    filter: saturate(1.25) brightness(1.15) contrast(1.08) drop-shadow(0 0 8px rgba(var(--grad-end-rgb), .55));
 }
 
 /* ===== DESKTOP LINKS ===== */

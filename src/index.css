@@ -9,14 +9,20 @@
   --surface:  #1d1a23;
   --card:     rgba(255,255,255,0.03);
 
-  /* Palette: Coral + Violet */
-  --coral:    #ff6154;
-  --coral-2:  #ff8a7a;
-  --coral-dim: rgba(255, 97, 84, 0.1);
-  --violet:   #9b5de5;
-  --violet-2: #c084fc;
-  --violet-dim: rgba(155, 93, 229, 0.1);
-  --gold:     #fbbf24;
+  /* Palette: Orchid -> Sky */
+  --grad-start: #e385fe;
+  --grad-end:   #79aeff;
+  --grad-start-rgb: 227, 133, 254;
+  --grad-end-rgb: 121, 174, 255;
+
+  /* Backward-compatible aliases used across components */
+  --coral:    var(--grad-start);
+  --coral-2:  #efb8ff;
+  --coral-dim: rgba(var(--grad-start-rgb), 0.12);
+  --violet:   var(--grad-end);
+  --violet-2: #a9cbff;
+  --violet-dim: rgba(var(--grad-end-rgb), 0.14);
+  --gold:     var(--grad-end);
 
   /* Text - high contrast */
   --txt-1:    #f4f0ff;     /* near-white with slight violet tint */
@@ -25,7 +31,7 @@
 
   /* Borders */
   --bdr:      rgba(255,255,255,0.07);
-  --bdr-glow: rgba(255, 97, 84, 0.22);
+  --bdr-glow: rgba(var(--grad-start-rgb), 0.24);
 
   /* Typography */
   --font:      'Outfit', sans-serif;
@@ -61,8 +67,8 @@ body::after {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 50% 40% at 10% 20%, rgba(255,97,84,0.07) 0%, transparent 100%),
-    radial-gradient(ellipse 40% 40% at 88% 78%, rgba(155,93,229,0.07) 0%, transparent 100%);
+    radial-gradient(ellipse 50% 40% at 10% 20%, rgba(var(--grad-start-rgb),0.08) 0%, transparent 100%),
+    radial-gradient(ellipse 40% 40% at 88% 78%, rgba(var(--grad-end-rgb),0.08) 0%, transparent 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -72,11 +78,11 @@ body::after {
   position: fixed;
   top: 0; left: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--coral), var(--violet), var(--coral));
+  background: linear-gradient(90deg, var(--grad-start), var(--grad-end), var(--grad-start));
   background-size: 200% auto;
   z-index: 9999;
   transition: width .08s linear;
-  box-shadow: 0 0 12px rgba(255,97,84,0.5);
+  box-shadow: 0 0 12px rgba(var(--grad-end-rgb),0.5);
   animation: shimBar 3s linear infinite;
 }
 @keyframes shimBar { 0%{background-position:0 0} 100%{background-position:200% 0} }
@@ -101,7 +107,7 @@ body::after {
     border-radius: 50%;
     pointer-events: none;
     z-index: 99999;
-    box-shadow: 0 0 8px rgba(255,97,84,.8);
+    box-shadow: 0 0 8px rgba(var(--grad-end-rgb),.8);
   }
   #custom-cursor.click { transform: scale(.7); border-color: var(--violet); }
 }
@@ -131,7 +137,7 @@ body::after {
   background: var(--coral-dim);
   border-color: var(--coral);
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(255,97,84,.2);
+  box-shadow: 0 12px 32px rgba(var(--grad-end-rgb),.22);
 }
 @media (max-width:768px) {
   .scroll-to-top {

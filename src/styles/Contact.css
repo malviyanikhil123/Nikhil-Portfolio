@@ -7,7 +7,7 @@
 }
 
 .contact-cta {
-  background: linear-gradient(135deg, rgba(255, 97, 84, 0.08) 0%, rgba(155, 93, 229, 0.07) 100%);
+  background: linear-gradient(135deg, rgba(var(--grad-start-rgb), 0.08) 0%, rgba(var(--grad-end-rgb), 0.07) 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding: 80px 40px;
@@ -20,7 +20,7 @@
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #ff8a7a;
+  color: var(--coral-2);
   display: block;
   margin-bottom: 16px;
 }
@@ -67,8 +67,8 @@
 }
 
 .contact-input:focus {
-  border-color: rgba(255, 97, 84, 0.55);
-  box-shadow: 0 0 0 3px rgba(255, 97, 84, 0.15);
+  border-color: rgba(var(--grad-end-rgb), 0.55);
+  box-shadow: 0 0 0 3px rgba(var(--grad-end-rgb), 0.15);
 }
 
 .contact-textarea {
@@ -81,7 +81,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: #ff6154;
+  background: var(--coral);
   color: #ffffff;
   font-family: 'Outfit', sans-serif;
   font-size: 0.9rem;
@@ -93,7 +93,7 @@
   border: none;
   cursor: pointer;
   transition: all .3s ease;
-  box-shadow: 0 8px 24px rgba(255, 97, 84, .3);
+  box-shadow: 0 8px 24px rgba(var(--grad-end-rgb), .3);
 }
 
 .contact-email-btn:disabled {
@@ -117,8 +117,8 @@
 
 .contact-email-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 40px rgba(255, 97, 84, .45);
-  background: #ff4f41;
+  box-shadow: 0 14px 40px rgba(var(--grad-end-rgb), .45);
+  background: var(--coral);
 }
 
 @media (max-width: 768px) {

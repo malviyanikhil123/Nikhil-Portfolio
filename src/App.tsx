@@ -182,22 +182,22 @@ function App() {
             toastOptions={{
               duration: 3500,
               style: {
-                background: "#131020",
+                background: "rgba(16, 15, 19, 0.96)",
                 color: "#f4f0ff",
-                border: "1px solid rgba(255, 255, 255, 0.12)",
+                border: "1px solid rgba(254, 81, 32, 0.24)",
                 borderRadius: "12px",
                 boxShadow: "0 14px 34px rgba(0, 0, 0, 0.35)",
               },
               success: {
                 iconTheme: {
-                  primary: "#22c55e",
-                  secondary: "#0b0f17",
+                  primary: "#E385FE",
+                  secondary: "#100f13",
                 },
               },
               error: {
                 iconTheme: {
-                  primary: "#ef4444",
-                  secondary: "#0b0f17",
+                  primary: "#79AEFF",
+                  secondary: "#100f13",
                 },
               },
             }}

@@ -44,7 +44,7 @@
 }
 
 .footer-brand-name span {
-  background: linear-gradient(135deg, #ff6154, #9b5de5);
+  background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -113,9 +113,9 @@
 }
 
 .social-btn:hover {
-  color: #ff8a7a;
-  background: rgba(255, 97, 84, .08);
-  border-color: rgba(255, 97, 84, .22);
+  color: var(--coral-2);
+  background: rgba(var(--grad-end-rgb), .08);
+  border-color: rgba(var(--grad-end-rgb), .22);
   transform: translateY(-2px);
 }
 

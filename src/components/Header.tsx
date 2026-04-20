@@ -102,7 +102,7 @@ const Header = () => {
                   className="logo-gradient-overlay"
                   style={{
                     background:
-                      "linear-gradient(135deg, var(--coral), var(--violet))",
+                      "linear-gradient(135deg, var(--grad-start), var(--grad-end))",
                     WebkitMaskImage: `url("${imglogo}")`,
                     maskImage: `url("${imglogo}")`,
                   }}

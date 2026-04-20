@@ -130,13 +130,13 @@ export const showToastExamples = {
     toast.success("Look at my styles.", {
       ...baseOptions,
       style: {
-        border: "1px solid #713200",
+        border: "1px solid #79AEFF",
         padding: "16px",
-        color: "#713200",
+        color: "#79AEFF",
       },
       iconTheme: {
-        primary: "#713200",
-        secondary: "#FFFAEE",
+        primary: "#E385FE",
+        secondary: "#EAF2FF",
       },
     });
   },
