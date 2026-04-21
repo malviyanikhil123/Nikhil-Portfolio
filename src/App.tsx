@@ -190,13 +190,13 @@ function App() {
               },
               success: {
                 iconTheme: {
-                  primary: "#E385FE",
+                  primary: "#FFC756",
                   secondary: "#100f13",
                 },
               },
               error: {
                 iconTheme: {
-                  primary: "#79AEFF",
+                  primary: "#FE5120",
                   secondary: "#100f13",
                 },
               },

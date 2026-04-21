@@ -9,20 +9,20 @@
   --surface:  #1d1a23;
   --card:     rgba(255,255,255,0.03);
 
-  /* Palette: Orchid -> Sky */
-  --grad-start: #e385fe;
-  --grad-end:   #79aeff;
-  --grad-start-rgb: 227, 133, 254;
-  --grad-end-rgb: 121, 174, 255;
+  /* Palette: Amber -> Ember */
+  --grad-start: #ffc756;
+  --grad-end:   #fe5120;
+  --grad-start-rgb: 255, 199, 86;
+  --grad-end-rgb: 254, 81, 32;
 
   /* Backward-compatible aliases used across components */
   --coral:    var(--grad-start);
-  --coral-2:  #efb8ff;
+  --coral-2:  #ffd98d;
   --coral-dim: rgba(var(--grad-start-rgb), 0.12);
   --violet:   var(--grad-end);
-  --violet-2: #a9cbff;
+  --violet-2: #ff8a68;
   --violet-dim: rgba(var(--grad-end-rgb), 0.14);
-  --gold:     var(--grad-end);
+  --gold:     var(--grad-start);
 
   /* Text - high contrast */
   --txt-1:    #f4f0ff;     /* near-white with slight violet tint */

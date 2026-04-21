@@ -79,11 +79,11 @@
   display: flex;
   gap: 16px;
   flex-shrink: 0;
-  animation: scroll 96s linear infinite;
+  animation: scroll 220s linear infinite;
   will-change: transform;
 }
 
-.marquee-track.reverse { animation: scrollRev 96s linear infinite; }
+.marquee-track.reverse { animation: scrollRev 220s linear infinite; }
 
 .marquee-row:hover .marquee-track { animation-play-state: paused; }
 
