@@ -83,8 +83,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--coral);
-  box-shadow: 0 0 8px var(--coral);
+  background: var(--grad-start);
+  box-shadow: 0 0 8px var(--grad-start);
   animation: blink 1.8s ease-in-out infinite;
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
@@ -281,7 +281,7 @@
   position: absolute;
   top: 16px;
   right: -12px;
-  background: var(--coral);
+  background: var(--grad-start);
   color: #fff;
   font-family: 'Outfit', sans-serif;
   font-size: 0.65rem;
