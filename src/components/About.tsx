@@ -134,7 +134,7 @@ export default function About() {
             <motion.div variants={itemVariants} className="hero-divider" />
 
             <motion.p variants={itemVariants} className="hero-desc">
-              Software Engineer at Reliablesoft specializing in Express, NestJS,
+              Intellidata Tech Solutions Pvt. Ltd. specializing in Express, NestJS,
               PostgreSQL, and microservices, building scalable backend systems.
               <br />
               Led NGO Saathi fullstack project and expanding into DevOps to
